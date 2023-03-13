@@ -16,9 +16,8 @@ module.exports = () => {
       path: path.resolve(__dirname, 'dist'),
     },
     plugins: [
-        new   HtmlWebpackPlugin({
-            template: './src/index.html',
-            filename: 'index.html',
+        new HtmlWebpackPlugin({
+            template: './index.html',
             title: 'JATE',
         }), 
 
@@ -33,7 +32,6 @@ module.exports = () => {
             description: 'An application that allows you to edit text files online and offline.',
             background_color: '#01579b',
             theme_color: '#ffffff',
-            'theme-color': '#ffffff',
             start_url: '/',
             public_path: '/',
             display: 'standalone',
@@ -41,7 +39,7 @@ module.exports = () => {
             inject: true,
             icons: [
                 {
-                    src: path.resolve('src/images/icons/icon-192x192.png'),
+                    src: path.resolve('src/images/logo.png'),
                     sizes: [96, 128, 192, 256, 384, 512],
                     destination: path.join('assets', 'icons'),
                 },
@@ -54,19 +52,16 @@ module.exports = () => {
       rules: [
       {
         test: /\.css$/i,
-        use: [MiniCssExtractPlugin.loader, 'css-loader'],
-      },
-      {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        type: 'asset/resource',
+        use: ['style-loader', 'css-loader'],      
       },
       {
         test: /\.m?js$/,
-        exclude: /(node_modules|bower_components)/,
+        exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
           options: {
             presets: ['@babel/preset-env'],
+            plugins: ["@babel/plugin-proposal-object-rest-spread", "@babel/transform-runtime"]
             },
           },
         },

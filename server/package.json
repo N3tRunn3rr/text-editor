@@ -7,7 +7,7 @@
         "server": "nodemon server.js --ignore client"
     },
     "keywords": [],
-    "author": "",
+    "author": "Kenji",
     "license": "ISC",
     "dependencies": {
         "express": "^4.17.1"
@@ -16,3 +16,4 @@
         "nodemon": "^2.0.4"
     }
 }
+
