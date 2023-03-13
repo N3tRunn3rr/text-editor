@@ -138,5 +138,10 @@ You are required to submit the following for review:
 
 * The URL of the GitHub repository, with a unique name and a README describing the project
 
+## Deployed on Heroku
+* [heroku](https://text-editor5.herokuapp.com/)
+
+## GitHub Repository
+* [GitHub](https://github.com/N3tRunn3rr/text-editor)
 - - -
 © 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
