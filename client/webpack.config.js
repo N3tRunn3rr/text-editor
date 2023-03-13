@@ -13,6 +13,7 @@ module.exports = () => {
     },
     output: {
       filename: '[name].bundle.js',
+      publicPath: '/',
       path: path.resolve(__dirname, 'dist'),
     },
 
@@ -21,11 +22,12 @@ module.exports = () => {
         new HtmlWebpackPlugin({
             template: './index.html',
             title: 'JATE',
+            filename: 'index.html',
         }), 
 
         new InjectManifest({
             swSrc: './src-sw.js',
-            swDest: 'sw.js',
+            swDest: 'src-sw.js',
         }),
 
         new WebpackPwaManifest({
